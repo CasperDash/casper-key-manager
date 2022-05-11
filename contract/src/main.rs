@@ -46,7 +46,7 @@ pub extern "C" fn call() {
 }
 
 fn get_entry_points() -> EntryPoints {
-    let remove_key = EntryPoint::new(
+    let set_key_weight = EntryPoint::new(
         String::from("set_key_weight"),
         vec![
             Parameter::new(ARG_ACCOUNT_HASH, AccountHash::cl_type()),
@@ -58,7 +58,7 @@ fn get_entry_points() -> EntryPoints {
     );
 
     let mut entry_points = EntryPoints::new();
-    entry_points.add_entry_point(remove_key);
+    entry_points.add_entry_point(set_key_weight);
 
     entry_points
 }
